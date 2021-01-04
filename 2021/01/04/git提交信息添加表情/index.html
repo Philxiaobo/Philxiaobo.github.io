@@ -1,0 +1,545 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>git提交信息添加表情 | Phil</title><meta name="keywords" content="git,emoji"><meta name="author" content="xiaobo"><meta name="copyright" content="xiaobo"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><meta name="description" content="commit信息添加表情">
+<meta property="og:type" content="article">
+<meta property="og:title" content="git提交信息添加表情">
+<meta property="og:url" content="http://xiaobo.work/2021/01/04/git%E6%8F%90%E4%BA%A4%E4%BF%A1%E6%81%AF%E6%B7%BB%E5%8A%A0%E8%A1%A8%E6%83%85/index.html">
+<meta property="og:site_name" content="Phil">
+<meta property="og:description" content="commit信息添加表情">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://xiaobo.work/img/git.jpg">
+<meta property="article:published_time" content="2021-01-04T07:07:00.000Z">
+<meta property="article:modified_time" content="2021-01-04T08:55:48.767Z">
+<meta property="article:author" content="xiaobo">
+<meta property="article:tag" content="git">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://xiaobo.work/img/git.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://xiaobo.work/2021/01/04/git%E6%8F%90%E4%BA%A4%E4%BF%A1%E6%81%AF%E6%B7%BB%E5%8A%A0%E8%A1%A8%E6%83%85/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: xiaobo","link":"链接: ","source":"来源: Phil","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  ClickShowText: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  justifiedGallery: {
+    js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+    css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+};
+
+var saveToLocal = {
+  set: function setWithExpiry(key, value, ttl) {
+    const now = new Date()
+    const expiryDay = ttl * 86400000
+    const item = {
+      value: value,
+      expiry: now.getTime() + expiryDay,
+    }
+    localStorage.setItem(key, JSON.stringify(item))
+  },
+
+  get: function getWithExpiry(key) {
+    const itemStr = localStorage.getItem(key)
+
+    if (!itemStr) {
+      return undefined
+    }
+    const item = JSON.parse(itemStr)
+    const now = new Date()
+
+    if (now.getTime() > item.expiry) {
+      localStorage.removeItem(key)
+      return undefined
+    }
+    return item.value
+  }
+}</script><script id="config_change">var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2021-01-04 16:55:48'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(function () {  window.activateDarkMode = function () {
+    document.documentElement.setAttribute('data-theme', 'dark')
+    if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+    }
+  }
+  window.activateLightMode = function () {
+    document.documentElement.setAttribute('data-theme', 'light')
+   if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+    }
+  }
+  const autoChangeMode = 'false'
+  const t = saveToLocal.get('theme')
+  if (autoChangeMode === '1') {
+    const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+    const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+    const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+    const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+    if (t === undefined) {
+      if (isLightMode) activateLightMode()
+      else if (isDarkMode) activateDarkMode()
+      else if (isNotSpecified || hasNoSupport) {
+        const now = new Date()
+        const hour = now.getHours()
+        const isNight = hour <= 6 || hour >= 18
+        isNight ? activateDarkMode() : activateLightMode()
+      }
+      window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+        if (saveToLocal.get('theme') === undefined) {
+          e.matches ? activateDarkMode() : activateLightMode()
+        }
+      })
+    } else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else if (autoChangeMode === '2') {
+    const now = new Date()
+    const hour = now.getHours()
+    const isNight = hour <= 6 || hour >= 18
+    if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+    else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else {
+    if (t === 'dark') activateDarkMode()
+    else if (t === 'light') activateLightMode()
+  }const asideStatus = saveToLocal.get('aside-status')
+if (asideStatus !== undefined) {
+   if (asideStatus === 'hide') {
+     document.documentElement.classList.add('hide-aside')
+   } else {
+     document.documentElement.classList.remove('hide-aside')
+   }
+}})()</script><meta name="generator" content="Hexo 5.2.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" src="/img/profile.jpeg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">6</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">7</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">5</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 文章</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(/img/git.jpg)"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Phil</a></span><span id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 文章</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><span class="close" id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="post-info"><h1 class="post-title">git提交信息添加表情</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-01-04T07:07:00.000Z" title="发表于 2021-01-04 15:07:00">2021-01-04</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-01-04T08:55:48.767Z" title="更新于 2021-01-04 16:55:48">2021-01-04</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a></span></div><div class="meta-secondline"> <span class="post-meta-separator">|</span><span class="post-meta-pv-cv"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>****1.对应表情释义</p>
+<table>
+<thead>
+<tr>
+<th align="center">emoji</th>
+<th align="center">代码</th>
+<th align="center">英文释义</th>
+<th align="center">commit说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">:art:</td>
+<td align="center">&#58;art&#58;</td>
+<td align="center">Improve structure / format of the code</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">:zap:</td>
+<td align="center">&#58;zap&#58;</td>
+<td align="center">Improve performance</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">:fire:</td>
+<td align="center">&#58;fire&#58;</td>
+<td align="center">Remove code or files</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">:bug:</td>
+<td align="center">&#58;bug&#58;</td>
+<td align="center">Fix a bug</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">:ambulance:</td>
+<td align="center">&#58;ambulance&#58;</td>
+<td align="center">Critical hotfix</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">:sparkles:</td>
+<td align="center">&#58;sparkles&#58;</td>
+<td align="center">Introduce new features</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">:memo:</td>
+<td align="center">&#58;memo&#58;</td>
+<td align="center">Add or update documentation</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">:rocket:</td>
+<td align="center">&#58;rocket&#58;</td>
+<td align="center">Deploy stuff</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">:lipstick:</td>
+<td align="center">&#58;lipstick&#58;</td>
+<td align="center">Add or update the UI and style files</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">:tada:</td>
+<td align="center">&#58;tada&#58;</td>
+<td align="center">Begin a project</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">:white_check_mark:</td>
+<td align="center">&#58;white_check_mark&#58;</td>
+<td align="center">Add or update tests</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">:lock:</td>
+<td align="center">&#58;lock&#58;</td>
+<td align="center">Fix security issues</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">:bookmark:</td>
+<td align="center">&#58;bookmark&#58;</td>
+<td align="center">Release / Version tags</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">:rotating_light:</td>
+<td align="center">&#58;rotating_light&#58;</td>
+<td align="center">Fix compiler / linter warnings</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">:construction:</td>
+<td align="center">&#58;construction&#58;</td>
+<td align="center">Work in progress</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">:green_heart:</td>
+<td align="center">&#58;green_heart&#58;</td>
+<td align="center">Fix CI Build</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">:arrow_down:</td>
+<td align="center">&#58;arrow_down&#58;</td>
+<td align="center">Downgrade dependencies</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">:arrow_up:</td>
+<td align="center">&#58;arrow_up&#58;</td>
+<td align="center">Upgrade dependencies</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">:pushpin:</td>
+<td align="center">&#58;pushpin&#58;</td>
+<td align="center">Pin dependencies to specific versions</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">:construction_worker:</td>
+<td align="center">&#58;construction_worker&#58;</td>
+<td align="center">Add or update CI build system</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">:chart_with_upwards_trend:</td>
+<td align="center">&#58;​chart_with_upwards_trend​&#58;</td>
+<td align="center">Add or update analytics or track code</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">:recycle:</td>
+<td align="center">&#58;​recycle​&#58;</td>
+<td align="center">Refactor code</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">:heavy_plus_sign:</td>
+<td align="center">&#58;​heavy_plus_sign​&#58;</td>
+<td align="center">Add a dependency</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">:heavy_minus_sign:</td>
+<td align="center">&#58;heavy_minus_sign&#58;</td>
+<td align="center">Remove a dependency</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">:wrench:</td>
+<td align="center">&#58;wrench&#58;​</td>
+<td align="center">Add or update configuration files</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">:hammer:</td>
+<td align="center">&#58;hammer&#58;​</td>
+<td align="center">Add or update development scripts</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">:globe_with_meridians:</td>
+<td align="center">&#58;globe_with_meridians​&#58;</td>
+<td align="center">Internationalization and localization</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">:pencil2:</td>
+<td align="center">&#58;pencil2​&#58;</td>
+<td align="center">Fix typos</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">:poop:</td>
+<td align="center">&#58;poop​&#58;</td>
+<td align="center">Write bad code that needs to be improved</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">:rewind:</td>
+<td align="center">&#58;rewind​&#58;</td>
+<td align="center">Revert changes</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">:twisted_rightwards_arrows:</td>
+<td align="center">&#58;twisted_rightwards_arrows​&#58;</td>
+<td align="center">Merge branches</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">:package:</td>
+<td align="center">&#58;package​&#58;</td>
+<td align="center">Add or update compiled files or packages</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">:alien:</td>
+<td align="center">&#58;alien​&#58;</td>
+<td align="center">Update code due to external API changes</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">:truck:</td>
+<td align="center">&#58;truck​&#58;</td>
+<td align="center">Move or rename resources (e.g.: files, paths, routes)</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">:page_facing_up:</td>
+<td align="center">&#58;page_facing_up​&#58;</td>
+<td align="center">Add or update license</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">:boom:</td>
+<td align="center">&#58;boom&#58;</td>
+<td align="center">Introduce breaking change</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">:bento:</td>
+<td align="center">&#58;bento​&#58;</td>
+<td align="center">Add or update assets</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">:wheelchair:</td>
+<td align="center">&#58;wheelchair​&#58;</td>
+<td align="center">Improve accessibility</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">:bulb:</td>
+<td align="center">&#58;bulb​&#58;</td>
+<td align="center">Add or update comments in source code</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">:beers:</td>
+<td align="center">&#58;beers&#58;</td>
+<td align="center">Write code drunkenly</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">:speech_balloon:</td>
+<td align="center">&#58;speech_balloon​&#58;</td>
+<td align="center">Add or update text and literals</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">:card_file_box:</td>
+<td align="center">&#58;card_file_box​&#58;</td>
+<td align="center">Perform database related changes</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">:loud_sound:</td>
+<td align="center">&#58;loud_sound&#58;</td>
+<td align="center">Add or update logs</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">:mute:</td>
+<td align="center">&#58;mute​&#58;</td>
+<td align="center">Remove logs</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">:busts_in_silhouette:</td>
+<td align="center">&#58;busts_in_silhouette​&#58;</td>
+<td align="center">Add or update contributor(s)</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">:children_crossing:</td>
+<td align="center">&#58;children_crossing​&#58;</td>
+<td align="center">Improve user experience / usability</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">:building_construction:</td>
+<td align="center">&#58;building_construction​&#58;</td>
+<td align="center">Make architectural changes</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">:iphone:</td>
+<td align="center">&#58;iphone​&#58;</td>
+<td align="center">Work on responsive design</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">:clown_face:</td>
+<td align="center">&#58;clown_face​&#58;</td>
+<td align="center">Mock things</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">:egg:</td>
+<td align="center">&#58;egg​&#58;</td>
+<td align="center">Add or update an easter egg</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">:see_no_evil:</td>
+<td align="center">&#58;see_no_evil​&#58;</td>
+<td align="center">Add or update a .gitignore file</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">:camera_flash:</td>
+<td align="center">&#58;camera_flash​&#58;</td>
+<td align="center">Add or update snapshots</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">:alembic:</td>
+<td align="center">&#58;alembic​&#58;</td>
+<td align="center">Perform experiments</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">:mag:</td>
+<td align="center">&#58;mag​&#58;</td>
+<td align="center">Improve SEO</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">:label:</td>
+<td align="center">&#58;label​&#58;</td>
+<td align="center">Add or update types</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">:seedling:</td>
+<td align="center">&#58;seedling​&#58;</td>
+<td align="center">Add or update seed files</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">:triangular_flag_on_post:</td>
+<td align="center">&#58;triangular_flag_on_post​&#58;</td>
+<td align="center">Add, update, or remove feature flags</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">:goal_net:</td>
+<td align="center">&#58;goal_net​&#58;</td>
+<td align="center">Catch errors</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">:dizzy:</td>
+<td align="center">&#58;dizzy​&#58;</td>
+<td align="center">Add or update animations and transitions</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">:wastebasket:</td>
+<td align="center">&#58;wastebasket​&#58;</td>
+<td align="center">Deprecate code that needs to be cleaned up</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">:passport_control:</td>
+<td align="center">&#58;passport_control​&#58;</td>
+<td align="center">Work on code related to authorization, roles and permissions</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">:adhesive_bandage:</td>
+<td align="center">&#58;adhesive_bandage&#58;</td>
+<td align="center">Simple fix for a non-critical issue</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">:monocle_face:</td>
+<td align="center">&#58;monocle_face&#58;</td>
+<td align="center">Data exploration/inspection</td>
+<td align="center"></td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>最后两个表情不显示，可能是比较新markdown还不支持</p>
+</blockquote>
+<p>****2.使用(如图所示直接在提交信息中写上对应表情的代码)</p>
+<p><img src="/contentImg/git_show.png" alt="图一"></p>
+<p>****3.效果</p>
+<p><img src="/contentImg/git_result.png" alt="图二"></p>
+<p>****4.参考官网</p>
+<p><a target="_blank" rel="noopener" href="https://gitmoji.dev/">https://gitmoji.dev/</a></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">xiaobo</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://xiaobo.work/2021/01/04/git%E6%8F%90%E4%BA%A4%E4%BF%A1%E6%81%AF%E6%B7%BB%E5%8A%A0%E8%A1%A8%E6%83%85/">http://xiaobo.work/2021/01/04/git提交信息添加表情/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://xiaobo.work" target="_blank">Phil</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/git/">git</a></div><div class="post_share"><div class="social-share" data-image="/img/git.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2020/11/23/JS%E6%95%B0%E7%BB%84%E6%B7%B1%E6%B5%85%E6%8B%B7%E8%B4%9D%E9%97%AE%E9%A2%98/"><img class="next-cover" src="/articleImg/JSArray.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">JS数组深浅拷贝问题</div></div></a></div></nav></div><div class="aside_content" id="aside_content"><div class="card-widget card-info"><div class="card-content"><div class="card-info-avatar is-center"><img class="avatar-img" src="/img/profile.jpeg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">xiaobo</div><div class="author-info__description">love and share</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">6</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">7</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length-num">5</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/Philxiaobo"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/Philxiaobo" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:xxxxxx@gmail.com" target="_blank" title="QQ"><i class="fab fa-qq"></i></a><a class="social-icon" href="mailto:xxxxxx@gmail.com" target="_blank" title="wechat"><i class="fab fa-weixin"></i></a></div></div></div><div class="card-widget card-announcement"><div class="card-content"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">博客内容仅为个人学习总结，如有错误，敬请见谅！</div></div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="card-content"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2021/01/04/git%E6%8F%90%E4%BA%A4%E4%BF%A1%E6%81%AF%E6%B7%BB%E5%8A%A0%E8%A1%A8%E6%83%85/" title="git提交信息添加表情"><img src="/img/git.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="git提交信息添加表情"/></a><div class="content"><a class="title" href="/2021/01/04/git%E6%8F%90%E4%BA%A4%E4%BF%A1%E6%81%AF%E6%B7%BB%E5%8A%A0%E8%A1%A8%E6%83%85/" title="git提交信息添加表情">git提交信息添加表情</a><time datetime="2021-01-04T07:07:00.000Z" title="发表于 2021-01-04 15:07:00">2021-01-04</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2020/11/23/JS%E6%95%B0%E7%BB%84%E6%B7%B1%E6%B5%85%E6%8B%B7%E8%B4%9D%E9%97%AE%E9%A2%98/" title="JS数组深浅拷贝问题"><img src="/articleImg/JSArray.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="JS数组深浅拷贝问题"/></a><div class="content"><a class="title" href="/2020/11/23/JS%E6%95%B0%E7%BB%84%E6%B7%B1%E6%B5%85%E6%8B%B7%E8%B4%9D%E9%97%AE%E9%A2%98/" title="JS数组深浅拷贝问题">JS数组深浅拷贝问题</a><time datetime="2020-11-23T09:30:00.000Z" title="发表于 2020-11-23 17:30:00">2020-11-23</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2020/11/10/%E5%B0%8F%E7%9F%A5%E8%AF%86%E7%82%B9%E7%A7%AF%E7%B4%AF/" title="小知识点及常见小问题积累"><img src="/articleImg/little.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="小知识点及常见小问题积累"/></a><div class="content"><a class="title" href="/2020/11/10/%E5%B0%8F%E7%9F%A5%E8%AF%86%E7%82%B9%E7%A7%AF%E7%B4%AF/" title="小知识点及常见小问题积累">小知识点及常见小问题积累</a><time datetime="2020-11-10T01:30:00.000Z" title="发表于 2020-11-10 09:30:00">2020-11-10</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2020/11/06/Java%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93(%E4%B8%80)/" title="Java基础知识总结(一)"><img src="/articleImg/JavaBasic1.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Java基础知识总结(一)"/></a><div class="content"><a class="title" href="/2020/11/06/Java%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93(%E4%B8%80)/" title="Java基础知识总结(一)">Java基础知识总结(一)</a><time datetime="2020-11-06T09:05:00.000Z" title="发表于 2020-11-06 17:05:00">2020-11-06</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2020/11/04/Java%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/" title="Java基础知识总结"><img src="/img/java.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Java基础知识总结"/></a><div class="content"><a class="title" href="/2020/11/04/Java%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/" title="Java基础知识总结">Java基础知识总结</a><time datetime="2020-11-04T09:20:00.000Z" title="发表于 2020-11-04 17:20:00">2020-11-04</time></div></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2019 - 2021 By xiaobo</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">Hi, welcome to my <a href="https://xiaobo.work">blog</a>!</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><div class="js-pjax"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><script defer="defer" id="ribbon" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-ribbon.min.js" size="150" alpha="0.6" zIndex="-1" mobile="true" data-click="true"></script></div></body></html>
